@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 4 - Анкета користувача</title>
+</head>
+<body style="font-family: Arial, sans-serif; padding: 20px;">
+
+    
+    <p><a href="../index.html" style="font-size: 16px;">&larr; Повернутись на головну</a></p>
+
+    <h1 align="center">Завдання 4. Інтерактивна анкета</h1>
+
+    <form action="#" method="post" enctype="multipart/form-data" style="max-width: 600px; margin: 0 auto;">
+        
+        
+        <fieldset style="margin-bottom: 20px; padding: 15px;">
+            <legend><b>Особисті дані</b></legend>
+            
+            <p>
+                <label for="fullname">ПІБ:</label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="Іванов Іван Іванович" required tabindex="1" style="width: 100%; box-sizing: border-box; padding: 5px;">
+            </p>
+
+            <p>
+                <label for="birthdate">Дата народження:</label><br>
+                <input type="date" id="birthdate" name="birthdate" required tabindex="2" style="width: 100%; box-sizing: border-box; padding: 5px;">
+            </p>
+
+            <p>
+                <label for="phone">Номер телефону (формат: +380XXXXXXXXX):</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="+380991234567" pattern="\+380\d{9}" required tabindex="3" style="width: 100%; box-sizing: border-box; padding: 5px;">
+            </p>
+
+            <p>
+                <label for="email">Електронна пошта:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@mail.com" autocomplete="off" required tabindex="4" style="width: 100%; box-sizing: border-box; padding: 5px;">
+            </p>
+
+            <p>
+                <label for="password">Пароль (від 6 символів, містить малі, великі літери та цифри):</label><br>
+                <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required tabindex="5" style="width: 100%; box-sizing: border-box; padding: 5px;">
+            </p>
+        </fieldset>
+
+        
+        <fieldset style="margin-bottom: 20px; padding: 15px;">
+            <legend><b>Навчання та уподобання</b></legend>
+
+            <p>
+                <label>Форма навчання:</label><br>
+                <input type="radio" id="day" name="study_form" value="day" checked tabindex="6">
+                <label for="day">Денна</label><br>
+                <input type="radio" id="extramural" name="study_form" value="extramural" tabindex="7">
+                <label for="extramural">Заочна</label>
+            </p>
+
+            <p>
+                <label>Які мови програмування ви вивчаєте?</label><br>
+                <input type="checkbox" id="lang_cpp" name="languages" value="cpp" checked tabindex="8">
+                <label for="lang_cpp">C++</label><br>
+                <input type="checkbox" id="lang_cs" name="languages" value="cs" checked tabindex="9">
+                <label for="lang_cs">C#</label><br>
+                <input type="checkbox" id="lang_js" name="languages" value="js" tabindex="10">
+                <label for="lang_js">JavaScript</label><br>
+                <input type="checkbox" id="lang_py" name="languages" value="py" tabindex="11">
+                <label for="lang_py">Python</label>
+            </p>
+
+            <p>
+                <label for="city">Оберіть ваше місто (із підказками):</label><br>
+                <input list="cities" id="city" name="city" placeholder="Почніть вводити місто..." tabindex="12" style="width: 100%; box-sizing: border-box; padding: 5px;">
+                <datalist id="cities">
+                    <option value="Чернівці">
+                    <option value="Київ">
+                    <option value="Львів">
+                    <option value="Одеса">
+                    <option value="Харків">
+                </datalist>
+            </p>
+
+            <p>
+                <label for="specialty">Спеціальність:</label><br>
+                <select id="specialty" name="specialty" tabindex="13" style="width: 100%; padding: 5px;">
+                    <optgroup label="Факультет математики та інформатики">
+                        <option value="121">121 Інженерія програмного забезпечення</option>
+                        <option value="122">122 Комп'ютерні науки</option>
+                    </optgroup>
+                    <optgroup label="Інші факультети">
+                        <option value="012">012 Дошкільна освіта</option>
+                        <option value="013">013 Початкова освіта</option>
+                    </optgroup>
+                </select>
+            </p>
+        </fieldset>
+
+        
+        <fieldset style="margin-bottom: 20px; padding: 15px;">
+            <legend><b>Додаткова інформація</b></legend>
+
+            <p>
+                <label for="audio_files">Завантажте аудіофайли (можна декілька):</label><br>
+                <input type="file" id="audio_files" name="audio_files" accept="audio/*" multiple tabindex="14">
+            </p>
+
+            <p>
+                <label for="about">Про себе:</label><br>
+                <textarea id="about" name="about" rows="4" placeholder="Розкажіть дещо про себе..." tabindex="15" style="width: 100%; box-sizing: border-box; padding: 5px;"></textarea>
+            </p>
+        </fieldset>
+
+        
+        <div style="text-align: center;">
+            <input type="submit" value="Надіслати анкету" tabindex="16" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+            <input type="reset" value="Очистити" tabindex="17" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">
+        </div>
+
+    </form>
+
+</body>
+</html>
