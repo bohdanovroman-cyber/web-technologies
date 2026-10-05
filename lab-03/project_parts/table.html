@@ -7,26 +7,35 @@
 </head>
 <body style="font-family: Arial, sans-serif; padding: 20px;">
 
-    
+    <!-- Посилання для повернення на головну -->
     <p><a href="../index.html" style="font-size: 16px;">&larr; Повернутись на головну</a></p>
 
-    <h1 align="center">Завдання 1. Квадратна таблиця з рамками</h1>
+    <h1 align="center">Завдання 1</h1>
 
-    <table border="1" cellpadding="15" cellspacing="0" align="center" style="border: 2px solid black; border-collapse: collapse; text-align: center;">
+    <!-- Таблиця 1: Вкладені рамки за зразком -->
+    <table border="1" cellpadding="0" cellspacing="0" align="center" style="border: 2px solid #000; border-collapse: collapse; width: 400px; height: 400px; text-align: center;">
         <tr>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">1</td>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">2</td>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">3</td>
+            <td colspan="5" style="background-color: #00ffff; border: 2px solid #000; height: 40px;"></td>
         </tr>
         <tr>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">4</td>
-            <td style="border: 2px solid black; width: 80px; height: 80px; background-color: #f0f0f0;"><b>Центр</b></td>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">5</td>
+            <td rowspan="4" style="background-color: #00ffff; border: 2px solid #000; width: 40px;"></td>
+            <td colspan="3" style="background-color: #00ffff; border: 2px solid #000; height: 40px;"></td>
+            <td rowspan="4" style="background-color: #00ffff; border: 2px solid #000; width: 40px;"></td>
         </tr>
         <tr>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">6</td>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">7</td>
-            <td style="border: 2px solid black; width: 80px; height: 80px;">8</td>
+            <td rowspan="2" style="background-color: #00ffff; border: 2px solid #000; width: 40px;"></td>
+            <td style="background-color: #ff0000; border: 2px solid #000; width: 60px; height: 60px;"></td>
+            <td style="background-color: #0000ff; border: 2px solid #000; width: 60px; height: 60px;"></td>
+        </tr>
+        <tr>
+            <td style="background-color: #00ff00; border: 2px solid #000; width: 60px; height: 60px;"></td>
+            <td style="background-color: #ffff00; border: 2px solid #000; width: 60px; height: 60px;"></td>
+        </tr>
+        <tr>
+            <td colspan="3" style="background-color: #00ffff; border: 2px solid #000; height: 40px;"></td>
+        </tr>
+        <tr>
+            <td colspan="5" style="background-color: #00ffff; border: 2px solid #000; height: 40px;"></td>
         </tr>
     </table>
 
@@ -34,22 +43,36 @@
 
     <h1 align="center">Завдання 2. Картина Піта Мондріана</h1>
 
-    <table border="1" cellspacing="0" align="center" style="border: 4px solid #000000; border-collapse: collapse; width: 400px; height: 400px; table-layout: fixed;">
-        <tr style="height: 120px;">
-            <td rowspan="2" style="background-color: #ff5b2d; border: 4px solid #000000; width: 150px;"></td>
-            <td colspan="2" style="background-color: #ffffff; border: 4px solid #000000;"></td>
-            <td style="background-color: #ffffff; border: 4px solid #000000; width: 60px;"></td>
+    <!-- Таблиця 2: Картина Мондріана за макетом -->
+    <table border="1" cellspacing="0" cellpadding="0" align="center" style="border: 5px solid #000; border-collapse: collapse; width: 450px; height: 450px;">
+        <!-- Рядок 1 -->
+        <tr style="height: 60px;">
+            <td style="width: 70px; background-color: #ffffff; border: 5px solid #000;"></td>
+            <td colspan="2" rowspan="2" style="background-color: #ff5b2d; border: 5px solid #000;"></td>
+            <td colspan="2" style="background-color: #fffe69; border: 5px solid #000;"></td>
         </tr>
-        <tr style="height: 140px;">
-            <td style="background-color: #ffffff; border: 4px solid #000000; width: 100px;"></td>
-            <td style="background-color: #074481; border: 4px solid #000000; width: 90px;"></td>
-            <td style="background-color: #ffffff; border: 4px solid #000000;"></td>
+        <!-- Рядок 2 -->
+        <tr style="height: 180px;">
+            <td rowspan="2" style="background-color: #ffffff; border: 5px solid #000;"></td>
+            <td style="width: 80px; background-color: #ffffff; border: 5px solid #000;"></td>
+            <td style="width: 40px; background-color: #ffffff; border: 5px solid #000;"></td>
         </tr>
-        <tr style="height: 140px;">
-            <td style="background-color: #fffe69; border: 4px solid #000000;"></td>
-            <td style="background-color: #ffffff; border: 4px solid #000000;"></td>
-            <td style="background-color: #000000; border: 4px solid #000000;"></td>
-            <td style="background-color: #ffffff; border: 4px solid #000000;"></td>
+        <!-- Рядок 3 -->
+        <tr style="height: 80px;">
+            <td rowspan="3" style="width: 70px; background-color: #fffe69; border: 5px solid #000;"></td>
+            <td style="background-color: #ffffff; border: 5px solid #000;"></td>
+            <td colspan="2" rowspan="2" style="background-color: #074481; border: 5px solid #000;"></td>
+        </tr>
+        <!-- Рядок 4 -->
+        <tr style="height: 70px;">
+            <td style="background-color: #000000; border: 5px solid #000;"></td>
+            <td style="background-color: #ffffff; border: 5px solid #000;"></td>
+        </tr>
+        <!-- Рядок 5 -->
+        <tr style="height: 60px;">
+            <td style="background-color: #ffffff; border: 5px solid #000;"></td>
+            <td style="background-color: #ffffff; border: 5px solid #000;"></td>
+            <td colspan="2" style="background-color: #ffffff; border: 5px solid #000;"></td>
         </tr>
     </table>
 
