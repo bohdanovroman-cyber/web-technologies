@@ -1,0 +1,33 @@
+body {
+    font-family: "Times New Roman", Times, serif;
+    color: black;
+}
+
+ul a {
+    color: purple;
+}
+
+.main-menu > li > a.menu-link {
+    color: green;
+}
+
+ul ul {
+    list-style-type: none;
+}
+
+.sub-list-2 {
+    list-style-type: "✔ ";
+    list-style-image: url('marker-icon.png');
+}
+
+.sub-list-3 {
+    list-style-type: square;
+}
+
+.sub-list-3 a {
+    text-decoration: none;
+}
+
+ol {
+    list-style-position: inside;
+}
