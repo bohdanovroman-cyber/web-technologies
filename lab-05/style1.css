@@ -1,0 +1,78 @@
+div {
+    background-color: rgb(255, 165, 0);
+    width: 500px;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    font-size: 25px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    list-style-position: inside;
+    background-repeat: no-repeat;
+}
+
+
+div > ul {
+    background-color: rgb(103, 158, 128);
+    padding-right: 20px;
+    padding-left: 50px;
+    margin: 0 0 10px 0;
+    background-image: url('icons/checklist.png');
+    background-position: 5px 5px;
+    background-size: 40px 40px;
+}
+
+
+ul ul {
+    padding: 0;
+    margin: 0;
+}
+
+ul ul li {
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgb(153, 180, 102);
+    margin-bottom: 10px;
+    padding-left: 40px;
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    background-size: 28px 28px;
+}
+
+ul ul li:nth-child(1) { background-image: url('icons/smartphone.png'); }
+ul ul li:nth-child(2) { background-image: url('icons/flight.png'); }
+ul ul li:nth-child(3) { background-image: url('icons/hotel.png'); }
+ul ul li:nth-child(4) { background-image: url('icons/car.png'); }
+
+
+div > ul:nth-of-type(2) {
+    background-image: url('icons/checklist.png');
+}
+div > ul:nth-of-type(2) ul li:nth-child(1) { background-image: url('icons/bar.png'); }
+div > ul:nth-of-type(2) ul li:nth-child(2) { background-image: url('icons/casino.png'); }
+div > ul:nth-of-type(2) ul li:nth-child(3) { background-image: url('icons/museum.png'); }
+div > ul:nth-of-type(2) ul li:nth-child(4) { background-image: url('icons/festival.png'); }
+
+span {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+
+div > ul > li > span {
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(199, 124, 106);
+    margin-bottom: 10px;
+}
+
+
+ul ul span {
+    background-color: rgb(218, 106, 32);
+}
