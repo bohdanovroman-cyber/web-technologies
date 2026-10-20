@@ -1,37 +1,58 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 20px;
 }
 
+h2 {
+    margin: 0 0 20px 0;
+}
+
+/* ---------- Частина 1: box-sizing ---------- */
+.part1 {
+    margin-bottom: 30px;
+}
 
 .part1 div {
     display: inline-block;
+    vertical-align: top;
     width: 300px;
     padding: 20px;
     border: 5px solid #1d6fb8;
     background-color: #d6ecff;
-    margin: 20px;
-    vertical-align: top;
+    margin: 0 20px 20px 0;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .part1 div:nth-of-type(1) {
     box-sizing: content-box;
-    
+    /* Загальна ширина: 300 + 2 * 20 + 2 * 5 = 350px */
 }
 
 .part1 div:nth-of-type(2) {
     box-sizing: border-box;
-    
+    /* Загальна ширина: 300px */
 }
 
+/* ---------- Частина 2: overflow ---------- */
+/* Нижній відступ залишає місце для тексту, що виходить за межі блоку (visible) */
+.part2 {
+    padding-bottom: 90px;
+    margin-bottom: 30px;
+}
 
 .part2 div {
     display: inline-block;
     vertical-align: top;
+    box-sizing: border-box;
     width: 250px;
     max-height: 80px;
+    padding: 2px 4px;
     border: 2px solid #c25451;
-    margin: 20px;
+    margin: 0 20px 20px 0;
     background-color: #fbeaea;
+    font-size: 15px;
+    line-height: 19px;
 }
 
 .part2 div:nth-of-type(1) { overflow: visible; }
@@ -39,7 +60,7 @@ body {
 .part2 div:nth-of-type(3) { overflow: scroll; }
 .part2 div:nth-of-type(4) { overflow: auto; }
 
-
+/* ---------- Частина 3: display ---------- */
 .part3 ul {
     list-style: none;
     margin: 0;
@@ -58,7 +79,14 @@ body {
     text-decoration: none;
 }
 
-
+/*
+   display: none повністю прибирає елемент з документа: він не відображається
+   і не займає місця, сусідні пункти зсуваються.
+   Інші способи лише ховають елемент візуально:
+   visibility: hidden  - елемент невидимий, але місце під нього залишається;
+   opacity: 0          - елемент прозорий, місце залишається, на нього можна клікнути;
+   position: absolute + винесення за екран - елемент поза видимою зоною.
+*/
 .part3 li:nth-child(4) {
     display: none;
 }

@@ -1,4 +1,5 @@
 div {
+    font-family: Arial, sans-serif;
     background-color: rgb(255, 165, 0);
     width: 500px;
     padding: 20px;
@@ -17,17 +18,15 @@ ul {
     background-repeat: no-repeat;
 }
 
-
 div > ul {
     background-color: rgb(103, 158, 128);
     padding-right: 20px;
     padding-left: 50px;
     margin: 0 0 10px 0;
-    background-image: url('icons/checklist.png');
+    background-image: url('icons/rule.png');
     background-position: 5px 5px;
     background-size: 40px 40px;
 }
-
 
 ul ul {
     padding: 0;
@@ -45,16 +44,12 @@ ul ul li {
     background-size: 28px 28px;
 }
 
-ul ul li:nth-child(1) { background-image: url('icons/smartphone.png'); }
-ul ul li:nth-child(2) { background-image: url('icons/flight.png'); }
-ul ul li:nth-child(3) { background-image: url('icons/hotel.png'); }
-ul ul li:nth-child(4) { background-image: url('icons/car.png'); }
+div > ul:nth-of-type(1) ul li:nth-child(1) { background-image: url('icons/ad_units.png'); }
+div > ul:nth-of-type(1) ul li:nth-child(2) { background-image: url('icons/airplane_ticket.png'); }
+div > ul:nth-of-type(1) ul li:nth-child(3) { background-image: url('icons/hotel.png'); }
+div > ul:nth-of-type(1) ul li:nth-child(4) { background-image: url('icons/car_rental.png'); }
 
-
-div > ul:nth-of-type(2) {
-    background-image: url('icons/checklist.png');
-}
-div > ul:nth-of-type(2) ul li:nth-child(1) { background-image: url('icons/bar.png'); }
+div > ul:nth-of-type(2) ul li:nth-child(1) { background-image: url('icons/local_bar.png'); }
 div > ul:nth-of-type(2) ul li:nth-child(2) { background-image: url('icons/casino.png'); }
 div > ul:nth-of-type(2) ul li:nth-child(3) { background-image: url('icons/museum.png'); }
 div > ul:nth-of-type(2) ul li:nth-child(4) { background-image: url('icons/festival.png'); }
@@ -64,14 +59,12 @@ span {
     padding: 10px 20px;
 }
 
-
 div > ul > li > span {
     font-size: 20px;
     font-weight: 700;
     background-color: rgb(199, 124, 106);
     margin-bottom: 10px;
 }
-
 
 ul ul span {
     background-color: rgb(218, 106, 32);
