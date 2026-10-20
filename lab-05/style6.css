@@ -8,11 +8,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-/*
-   Коли вікно браузера вужче за 320px, min-width не дозволяє контейнеру
-   стискатися далі: він залишається шириною 320px, виходить за межі вікна
-   і з'являється горизонтальна прокрутка сторінки.
-*/
+
 main {
     box-sizing: border-box;
     max-width: 900px;
@@ -22,11 +18,8 @@ main {
     background-color: rgba(255, 255, 255, 0.85);
 }
 
-/* ---------- Блок «Теги» ---------- */
-/*
-   width і height не діють на рядкові (inline) елементи: їхній розмір
-   визначається вмістом. Тому div з display: inline ігнорують 200px × 100px.
-*/
+
+
 section:nth-of-type(1) div {
     display: inline;
     width: 200px;
@@ -34,7 +27,6 @@ section:nth-of-type(1) div {
     background-color: #d6ecff;
 }
 
-/* Блокові span займають окремий рядок, тому width: 150px діє */
 section:nth-of-type(1) span {
     display: block;
     width: 150px;
@@ -42,13 +34,7 @@ section:nth-of-type(1) span {
     background-color: #fbeaea;
 }
 
-/* ---------- Блок «Повторення фону» ---------- */
-/*
-   space: картинка повторюється лише цілими копіями, без обрізання, а вільне
-   місце розподіляється порівну між копіями (з'являються проміжки).
-   round: картинка теж повторюється цілими копіями, але копії розтягуються
-   або стискаються, щоб заповнити весь простір без проміжків.
-*/
+
 .repeat div {
     position: relative;
     box-sizing: border-box;
@@ -68,7 +54,7 @@ section:nth-of-type(1) span {
 .repeat div:nth-of-type(3) { background-repeat: space; }
 .repeat div:nth-of-type(4) { background-repeat: round; }
 
-/* ---------- Блок «Масштабування» ---------- */
+
 .size div {
     position: relative;
     display: inline-block;
@@ -87,12 +73,12 @@ section:nth-of-type(1) span {
     background-clip: content-box;
 }
 
-/* contain: картинка вміщується повністю, можливі порожні поля */
+
 .size div:nth-of-type(1) { background-size: contain; }
-/* cover: картинка заповнює весь блок, зайве обрізається */
+
 .size div:nth-of-type(2) { background-size: cover; }
 
-/* Смужка з підписом зверху блоку (фон під неї не заходить) */
+
 .repeat div span,
 .size div span {
     position: absolute;
@@ -107,13 +93,7 @@ section:nth-of-type(1) span {
     background-color: #e8f1fa;
 }
 
-/* ---------- Блок «Прокручування фону» ---------- */
-/*
-   scroll: фон прикріплений до самого блоку, тому під час прокручування
-   тексту всередині блоку фон залишається на місці.
-   local: фон прикріплений до вмісту блоку, тому він прокручується разом
-   із текстом.
-*/
+
 .attachment div {
     display: inline-block;
     vertical-align: top;
@@ -122,14 +102,22 @@ section:nth-of-type(1) span {
     max-height: 150px;
     overflow: auto;
     margin: 10px;
-    padding: 5px 75px 5px 5px;
+    padding: 5px 95px 5px 5px;
     border: 2px solid #1d6fb8;
     background-color: #ffffff;
     background-image: url('img/icon.png');
     background-size: 60px 60px;
     background-repeat: no-repeat;
-    background-position: right 8px top 8px;
 }
 
-.attachment div:nth-of-type(1) { background-attachment: scroll; }
-.attachment div:nth-of-type(2) { background-attachment: local; }
+/* scroll: відсуваємо іконку від смуги прокручування */
+.attachment div:nth-of-type(1) {
+    background-attachment: scroll;
+    background-position: right 28px top 8px;
+}
+
+/* local: фон рахується без смуги, тому відступ менший */
+.attachment div:nth-of-type(2) {
+    background-attachment: local;
+    background-position: right 12px top 8px;
+}
