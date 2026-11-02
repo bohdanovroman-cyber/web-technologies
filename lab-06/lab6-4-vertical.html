@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Вертикальна навігація</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; }
+
+    .sidenav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 220px;
+      height: 100vh;
+      margin: 0; padding: 0;
+      list-style: none;
+      background: #0072bc;
+    }
+
+    .sidenav li { position: relative; }
+
+    .sidenav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 54px;
+      padding: 0 20px;
+      color: white;
+      text-decoration: none;
+      border-bottom: 1px solid #3a96d6;
+    }
+
+    .sidenav a:hover { background: #0a5a94; }
+    .sidenav a:focus { outline: 2px solid #fff; outline-offset: -2px; }
+    .sidenav li.active > a { background: #004c7e; }
+
+    /* вкладені списки: 2-й і 3-й рівні */
+    .sidenav ul {
+      display: none;
+      position: absolute;
+      top: 0; left: 100%;
+      width: 220px;
+      margin: 0; padding: 0;
+      list-style: none;
+      background: #0a6aa8;
+    }
+    .sidenav li:hover > ul { display: block; }
+
+    .content { margin-left: 240px; padding: 20px; }
+  </style>
+</head>
+<body>
+  <ul class="sidenav">
+    <li class="active"><a href="#"><span class="material-icons">home</span>Home</a></li>
+    <li>
+      <a href="#"><span class="material-icons">info</span>About</a>
+      <ul>
+        <li><a href="#"><span class="material-icons">groups</span>Команда</a></li>
+        <li>
+          <a href="#"><span class="material-icons">history</span>Історія</a>
+          <ul>
+            <li><a href="#"><span class="material-icons">event</span>2023</a></li>
+            <li><a href="#"><span class="material-icons">event</span>2024</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#"><span class="material-icons">work</span>Work With Me</a>
+      <ul>
+        <li><a href="#"><span class="material-icons">code</span>Проєкти</a></li>
+        <li><a href="#"><span class="material-icons">mail</span>Контакти</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="content"><h1>Вміст сторінки</h1></div>
+</body>
+</html>
