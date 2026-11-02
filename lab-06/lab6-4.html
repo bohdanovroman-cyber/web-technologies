@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Горизонтальна навігація</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding-top: 60px; font-family: Arial, sans-serif; height: 2000px; }
+
+    .topnav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 60px;
+      margin: 0; padding: 0;
+      list-style: none;
+      background: #555;
+      z-index: 100;
+    }
+
+    .topnav > li { float: left; position: relative; }
+
+    .topnav a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      min-width: 90px;
+      padding: 0 20px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .topnav a:hover { background: #777; }
+    .topnav a:focus { outline: 2px solid #fff; outline-offset: -2px; }
+
+    /* активний пункт */
+    .topnav li.active > a { background: #4caf50; }
+
+    /* останній пункт справа */
+    .topnav > li:last-child { float: right; }
+
+    /* випадні списки */
+    .topnav ul {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      min-width: 180px;
+      margin: 0; padding: 0;
+      list-style: none;
+      background: #666;
+    }
+    .topnav ul a { justify-content: flex-start; height: 44px; }
+    .topnav li:hover > ul { display: block; }
+
+    /* другий рівень вкладеності */
+    .topnav ul ul { top: 0; left: 100%; }
+  </style>
+</head>
+<body>
+  <ul class="topnav">
+    <li class="active"><a href="#"><span class="material-icons">home</span></a></li>
+    <li>
+      <a href="#"><span class="material-icons">search</span></a>
+      <ul>
+        <li><a href="#">Пошук за назвою</a></li>
+        <li>
+          <a href="#">Розширений пошук</a>
+          <ul>
+            <li><a href="#">За датою</a></li>
+            <li><a href="#">За автором</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#"><span class="material-icons">mail</span></a>
+      <ul>
+        <li><a href="#">Вхідні</a></li>
+        <li><a href="#">Надіслані</a></li>
+      </ul>
+    </li>
+    <li><a href="#"><span class="material-icons">person</span></a></li>
+  </ul>
+
+  <p style="padding:20px">Прокрутіть сторінку: панель залишається вгорі.</p>
+</body>
+</html>
