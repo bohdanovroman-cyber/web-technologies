@@ -2,88 +2,234 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Горизонтальна навігація</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лабораторна 6 – Завдання 4: навігація</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; padding-top: 60px; font-family: Arial, sans-serif; height: 2000px; }
+    :root {
+      --top-h: 68px;
+      --side-w: 312px;
+
+      --top-bg: #0d47a1;
+      --top-hover: #1558bd;
+      --top-active: #1976d2;
+      --drop-bg: #0b3c8a;
+
+      --side-bg: #0277bd;
+      --side-hover: #0288d1;
+      --side-active: #01579b;
+      --side-sub1: #01639f;
+      --side-sub2: #014f82;
+      --line: rgba(255, 255, 255, 0.18);
+    }
+
+    * { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+
+    body {
+      margin: 0;
+      padding-top: var(--top-h);
+      background: #e0e0e0;
+      min-height: 2000px;
+    }
+
+    ul { margin: 0; padding: 0; list-style: none; }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .material-icons { font-size: 30px; }
 
     .topnav {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 100%;
-      height: 60px;
-      margin: 0; padding: 0;
-      list-style: none;
-      background: #555;
-      z-index: 100;
+      height: var(--top-h);
+      background: var(--top-bg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+      z-index: 1000;
     }
 
-    .topnav > li { float: left; position: relative; }
+    .topnav > li {
+      float: left;
+      position: relative;
+    }
+
+    .topnav > li:last-child { float: right; }
 
     .topnav a {
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 60px;
-      min-width: 90px;
-      padding: 0 20px;
-      color: white;
-      text-decoration: none;
+      gap: 10px;
+      height: var(--top-h);
+      padding: 0 26px;
+      transition: background 0.2s;
     }
 
-    .topnav a:hover { background: #777; }
-    .topnav a:focus { outline: 2px solid #fff; outline-offset: -2px; }
+    .topnav a:hover,
+    .topnav li:focus-within > a { background: var(--top-hover); }
 
-    /* активний пункт */
-    .topnav li.active > a { background: #4caf50; }
+    .topnav a:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: -3px;
+    }
 
-    /* останній пункт справа */
-    .topnav > li:last-child { float: right; }
+    .topnav li.active > a { background: var(--top-active); }
 
-    /* випадні списки */
     .topnav ul {
       display: none;
       position: absolute;
-      top: 100%; left: 0;
-      min-width: 180px;
-      margin: 0; padding: 0;
-      list-style: none;
-      background: #666;
+      top: 100%;
+      left: 0;
+      min-width: 220px;
+      background: var(--drop-bg);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
     }
-    .topnav ul a { justify-content: flex-start; height: 44px; }
-    .topnav li:hover > ul { display: block; }
 
-    /* другий рівень вкладеності */
+    .topnav ul a {
+      height: 52px;
+      font-size: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topnav li:hover > ul,
+    .topnav li:focus-within > ul { display: block; }
+
     .topnav ul ul { top: 0; left: 100%; }
+
+    .topnav ul li:has(> ul) > a:after {
+      content: "chevron_right";
+      font-family: "Material Icons";
+      margin-left: auto;
+      font-size: 22px;
+    }
+
+    .sidenav {
+      position: fixed;
+      top: var(--top-h);
+      left: 0;
+      width: var(--side-w);
+      height: calc(100vh - var(--top-h));
+      background: var(--side-bg);
+      overflow-y: auto;
+      z-index: 900;
+    }
+
+    .sidenav a {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      height: 68px;
+      padding: 0 26px;
+      border-bottom: 1px solid var(--line);
+      transition: background 0.2s;
+    }
+
+    .sidenav a:hover { background: var(--side-hover); }
+
+    .sidenav a:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: -3px;
+    }
+
+    .sidenav li.active > a { background: var(--side-active); }
+
+    .sidenav ul { display: none; }
+
+    .sidenav li:hover > ul,
+    .sidenav li:focus-within > ul { display: block; }
+
+    .sidenav ul { background: var(--side-sub1); }
+    .sidenav ul a {
+      height: 60px;
+      padding-left: 56px;
+      font-size: 17px;
+    }
+
+    .sidenav ul ul { background: var(--side-sub2); }
+    .sidenav ul ul a {
+      height: 52px;
+      padding-left: 86px;
+      font-size: 16px;
+    }
+
+    .sidenav li:has(> ul) > a:after {
+      content: "expand_more";
+      font-family: "Material Icons";
+      margin-left: auto;
+      font-size: 24px;
+      transition: transform 0.2s;
+    }
+    .sidenav li:hover > a:after { transform: rotate(180deg); }
+
+    .content {
+      margin-left: var(--side-w);
+      padding: 30px 40px;
+      color: #333;
+    }
+    .content h1 { margin-top: 0; }
   </style>
 </head>
+
 <body>
+
   <ul class="topnav">
-    <li class="active"><a href="#"><span class="material-icons">home</span></a></li>
+    <li class="active">
+      <a href="#"><span class="material-icons">home</span>Головна</a>
+    </li>
+
     <li>
-      <a href="#"><span class="material-icons">search</span></a>
+      <a href="#"><span class="material-icons">info</span>Про нас</a>
       <ul>
-        <li><a href="#">Пошук за назвою</a></li>
+        <li><a href="#">Наша команда</a></li>
         <li>
-          <a href="#">Розширений пошук</a>
+          <a href="#">Історія</a>
           <ul>
-            <li><a href="#">За датою</a></li>
-            <li><a href="#">За автором</a></li>
+            <li><a href="#">2023 рік</a></li>
+            <li><a href="#">2024 рік</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Партнери</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#"><span class="material-icons">mail</span>Контакти</a>
+    </li>
+  </ul>
+
+  <ul class="sidenav">
+    <li class="active">
+      <a href="#"><span class="material-icons">home</span>Home</a>
+    </li>
+
+    <li>
+      <a href="#"><span class="material-icons">event</span>About</a>
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li>
+          <a href="#">Careers</a>
+          <ul>
+            <li><a href="#">Open positions</a></li>
+            <li><a href="#">Internships</a></li>
           </ul>
         </li>
       </ul>
     </li>
+
     <li>
-      <a href="#"><span class="material-icons">mail</span></a>
-      <ul>
-        <li><a href="#">Вхідні</a></li>
-        <li><a href="#">Надіслані</a></li>
-      </ul>
+      <a href="#"><span class="material-icons">local_cafe</span>Work With Me</a>
     </li>
-    <li><a href="#"><span class="material-icons">person</span></a></li>
   </ul>
 
-  <p style="padding:20px">Прокрутіть сторінку: панель залишається вгорі.</p>
+  <main class="content">
+    <h1>Навігаційні панелі</h1>
+    <p>Прокрутіть сторінку вниз: горизонтальна панель залишається вгорі, а вертикальна займає всю висоту.</p>
+  </main>
+
 </body>
 </html>

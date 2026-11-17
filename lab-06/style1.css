@@ -28,7 +28,7 @@ body {
 
 .apps { position: relative; }
 
-/* ---------- Кнопка попапу ---------- */
+
 .popup-button {
   -webkit-appearance: none;
   appearance: none;
@@ -49,7 +49,7 @@ body {
 .popup-button:focus   { outline: none; border-color: #4285f4; }
 .popup-button:checked { border-color: #4285f4; background-color: #e8f0fe; }
 
-/* ---------- Попап ---------- */
+
 .popup {
   position: absolute;
   top: 46px;
@@ -58,7 +58,7 @@ body {
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  /* початковий стан: не видно і не фокусується */
+  
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, visibility 0.2s;
@@ -82,7 +82,7 @@ body {
   gap: 6px;
 }
 
-/* ---------- Іконки ---------- */
+
 .app {
   display: flex;
   flex-direction: column;
@@ -99,7 +99,7 @@ body {
 .app:hover { background: #f8f8f8; border-color: #ddd; }
 .app:focus { outline: none; border-color: #4285f4; box-shadow: 0 0 0 1px #4285f4; }
 
-/* ---------- Додаткові іконки (після More) ---------- */
+
 .extra { display: none; }
 
 .popup:has(.more-button:checked) .extra {
@@ -122,7 +122,7 @@ body {
 .even-more:hover { background: #f8f8f8; border-color: #ddd; }
 .even-more:focus { outline: none; border-color: #4285f4; }
 
-/* ---------- Кнопка More ---------- */
+
 .more-button {
   -webkit-appearance: none;
   appearance: none;

@@ -199,16 +199,16 @@ body {
 }
 
 .btn {
-  width: 180px; /* Збільшили ширину з 150px до 180px */
+  width: 180px; 
   height: 44px;
-  padding: 0 10px; /* Додали внутрішні відступи */
-  box-sizing: border-box; /* Головне: рамки тепер входять у ширину */
-  font-size: 16px; /* Трохи зменшили шрифт, щоб текст точно вліз (було 18px) */
+  padding: 0 10px; 
+  box-sizing: border-box; 
+  font-size: 16px; 
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
   background: transparent;
-  white-space: nowrap; /* Забороняємо переносу тексту */
+  white-space: nowrap; 
 }
 
 .btn:last-child { 
