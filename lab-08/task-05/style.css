@@ -1,0 +1,95 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; font-family: Arial, sans-serif; background: #fff8f6; }
+h2 { font-size: 1.1rem; margin: 24px 0 12px; }
+
+.layout { margin-bottom: 32px; }
+.layout > * {
+  border: 2px solid #f5533d;
+  background: #fff;
+  padding: 8px;
+  font-size: .8rem;
+  border-radius: 3px;
+}
+.layout main { min-height: 220px; }
+
+/* ================= Спосіб 1: column grids + rows ================= */
+
+/* mobile-first */
+.way1 { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.way1 header   { grid-row: 1; }
+.way1 nav      { grid-row: 2; }
+.way1 main     { grid-row: 3; }
+.way1 .sidebar { grid-row: 4; }
+.way1 .ads     { grid-row: 5; }
+.way1 footer   { grid-row: 6; }
+
+/* tablet */
+@media (min-width: 768px) {
+  .way1 { grid-template-columns: 1fr 3fr; grid-template-rows: auto auto 1fr auto; }
+  .way1 header   { grid-column: 1 / 3; grid-row: 1; }
+  .way1 nav      { grid-column: 1 / 3; grid-row: 2; }
+  .way1 .sidebar { grid-column: 1;     grid-row: 3; }
+  .way1 main     { grid-column: 2;     grid-row: 3; }
+  .way1 .ads     { grid-column: 1;     grid-row: 4; }
+  .way1 footer   { grid-column: 2;     grid-row: 4; }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .way1 { grid-template-columns: 1fr 4fr 1fr; grid-template-rows: auto auto 1fr auto; }
+  .way1 header   { grid-column: 1 / 4; grid-row: 1; }
+  .way1 .sidebar { grid-column: 1;     grid-row: 2 / 4; }
+  .way1 nav      { grid-column: 2;     grid-row: 2; }
+  .way1 main     { grid-column: 2;     grid-row: 3; }
+  .way1 .ads     { grid-column: 3;     grid-row: 2 / 4; }
+  .way1 footer   { grid-column: 1 / 4; grid-row: 4; }
+}
+
+/* ================= Спосіб 2: grid-template-areas ================= */
+
+.way2 header   { grid-area: header; }
+.way2 nav      { grid-area: nav; }
+.way2 main     { grid-area: main; }
+.way2 .sidebar { grid-area: sidebar; }
+.way2 .ads     { grid-area: ads; }
+.way2 footer   { grid-area: footer; }
+
+/* mobile-first */
+.way2 {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "sidebar"
+    "ads"
+    "footer";
+}
+
+/* tablet */
+@media (min-width: 768px) {
+  .way2 {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header  header"
+      "nav     nav"
+      "sidebar main"
+      "ads     footer";
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .way2 {
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+      "header  header ads"
+      "sidebar nav    ads"
+      "sidebar main   ads"
+      "footer  footer footer";
+  }
+}

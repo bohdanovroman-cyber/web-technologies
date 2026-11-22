@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 16px; background: #fff; }
+
+/* 6 колонок-рівнів (1, 2, 3, 4, 6, 12 блоків), 12 рядків — спільне кратне */
+.tree {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 40px);
+  gap: 6px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  counter-reset: block;
+}
+.b {
+  background: #ffd844;
+  counter-increment: block;
+  text-align: center;
+  font: 1rem "Times New Roman", serif;
+  padding-top: 4px;
+}
+.b::before { content: counter(block); }
+
+/* колонка 1 */
+.b1  { grid-column: 1; grid-row: 1 / span 12; }
+/* колонка 2 */
+.b2  { grid-column: 2; grid-row: 1 / span 6; }
+.b3  { grid-column: 2; grid-row: 7 / span 6; }
+/* колонка 3 */
+.b4  { grid-column: 3; grid-row: 1 / span 4; }
+.b5  { grid-column: 3; grid-row: 5 / span 4; }
+.b6  { grid-column: 3; grid-row: 9 / span 4; }
+/* колонка 4 */
+.b7  { grid-column: 4; grid-row: 1 / span 3; }
+.b8  { grid-column: 4; grid-row: 4 / span 3; }
+.b9  { grid-column: 4; grid-row: 7 / span 3; }
+.b10 { grid-column: 4; grid-row: 10 / span 3; }
+/* колонка 5 */
+.b11 { grid-column: 5; grid-row: 1 / span 2; }
+.b12 { grid-column: 5; grid-row: 3 / span 2; }
+.b13 { grid-column: 5; grid-row: 5 / span 2; }
+.b14 { grid-column: 5; grid-row: 7 / span 2; }
+.b15 { grid-column: 5; grid-row: 9 / span 2; }
+.b16 { grid-column: 5; grid-row: 11 / span 2; }
+/* колонка 6 */
+.b17 { grid-column: 6; grid-row: 1; }
+.b18 { grid-column: 6; grid-row: 2; }
+.b19 { grid-column: 6; grid-row: 3; }
+.b20 { grid-column: 6; grid-row: 4; }
+.b21 { grid-column: 6; grid-row: 5; }
+.b22 { grid-column: 6; grid-row: 6; }
+.b23 { grid-column: 6; grid-row: 7; }
+.b24 { grid-column: 6; grid-row: 8; }
+.b25 { grid-column: 6; grid-row: 9; }
+.b26 { grid-column: 6; grid-row: 10; }
+.b27 { grid-column: 6; grid-row: 11; }
+.b28 { grid-column: 6; grid-row: 12; }

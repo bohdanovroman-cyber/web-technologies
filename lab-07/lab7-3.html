@@ -7,6 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="w-sun" viewBox="0 0 64 64"><circle cx="32" cy="32" r="16" fill="#FFE066"/></symbol>
+    <symbol id="w-cloud" viewBox="0 0 64 64"><path fill="#CFCFCF" d="M18 44a10 10 0 0 1 1-20 14 14 0 0 1 27 3 8.5 8.5 0 0 1-1 17z"/></symbol>
+    <symbol id="w-partly" viewBox="0 0 64 64"><circle cx="40" cy="24" r="13" fill="#FFE066"/><path fill="#CFCFCF" d="M14 50a9 9 0 0 1 1-18 12 12 0 0 1 23 3 7.5 7.5 0 0 1-1 15z"/></symbol>
+    <symbol id="w-rain" viewBox="0 0 64 64"><path fill="#CFCFCF" d="M18 38a10 10 0 0 1 1-20 14 14 0 0 1 27 3 8.5 8.5 0 0 1-1 17z"/><path stroke="#3EC1F0" stroke-width="4" stroke-linecap="round" d="M22 46l-3 8M32 46l-3 8M42 46l-3 8"/></symbol>
+    <symbol id="w-storm" viewBox="0 0 64 64"><path fill="#CFCFCF" d="M18 36a10 10 0 0 1 1-20 14 14 0 0 1 27 3 8.5 8.5 0 0 1-1 17z"/><path fill="#FFD23F" d="M36 34l-8 12h6l-4 12 12-16h-6z"/><path stroke="#3EC1F0" stroke-width="4" stroke-linecap="round" d="M20 44l-3 8M28 48l-3 8"/></symbol>
+  </svg>
+
   <main class="weather">
     <header class="current">
       <h1 class="city">New York, NY</h1>
@@ -15,7 +23,7 @@
 
       <div class="current-main">
         <div class="temp-block">
-          <img class="current-icon" src="icons/cloudy.png" alt="Overcast">
+          <svg class="current-icon" role="img" aria-label="Overcast"><use href="#w-cloud"/></svg>
           <span class="temp">58</span>
           <span class="unit">°F</span>
         </div>
@@ -31,43 +39,43 @@
     <ul class="days">
       <li class="day">
         <span class="day-name">Today</span>
-        <img class="day-icon" src="icons/storm.png" alt="Thunderstorm">
+        <svg class="day-icon" role="img" aria-label="Thunderstorm"><use href="#w-storm"/></svg>
         <span class="day-temps"><span>68°</span><span>36°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Wednesday</span>
-        <img class="day-icon" src="icons/sunny.png" alt="Sunny">
+        <svg class="day-icon" role="img" aria-label="Sunny"><use href="#w-sun"/></svg>
         <span class="day-temps"><span>50°</span><span>39°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Thursday</span>
-        <img class="day-icon" src="icons/sunny.png" alt="Sunny">
+        <svg class="day-icon" role="img" aria-label="Sunny"><use href="#w-sun"/></svg>
         <span class="day-temps"><span>55°</span><span>39°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Friday</span>
-        <img class="day-icon" src="icons/partly-cloudy.png" alt="Partly cloudy">
+        <svg class="day-icon" role="img" aria-label="Partly cloudy"><use href="#w-partly"/></svg>
         <span class="day-temps"><span>54°</span><span>43°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Saturday</span>
-        <img class="day-icon" src="icons/rain.png" alt="Rain">
+        <svg class="day-icon" role="img" aria-label="Rain"><use href="#w-rain"/></svg>
         <span class="day-temps"><span>64°</span><span>46°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Sunday</span>
-        <img class="day-icon" src="icons/rain.png" alt="Rain">
+        <svg class="day-icon" role="img" aria-label="Rain"><use href="#w-rain"/></svg>
         <span class="day-temps"><span>64°</span><span>50°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
       <li class="day">
         <span class="day-name">Monday</span>
-        <img class="day-icon" src="icons/partly-cloudy.png" alt="Partly cloudy">
+        <svg class="day-icon" role="img" aria-label="Partly cloudy"><use href="#w-partly"/></svg>
         <span class="day-temps"><span>61°</span><span>50°</span></span>
         <span class="pollen">Pollen 36</span>
       </li>
